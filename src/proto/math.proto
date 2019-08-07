@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package protobuf;
+
+service Math {
+  rpc Max (stream Request) returns (stream Response) {}
+}
+
+message Request {
+  uint32 num = 1;
+  string msg = 2;
+}
+
+message Response {
+  uint32 result = 1;
+}
